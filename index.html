@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Compras</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+  <link rel="shortcut icon" href=./assets/favicon.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+<body>
+  <div class="color-grid">
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+    <span class="red-col"></span>
+  </div>
+
+  <header>
+    <i class="logo"></i>
+
+    <a href="#"><- Voltar</a>
+    <h1>Compras da semana</h1>
+
+    <form>
+      <div class="input">
+        <input type="text" placeholder="Adicione um novo item" id="newItem" required />
+        <small>Adicione alguma valor dentro do input</small>
+        <button type="button" data-variant="trash" id="clearInput">
+          <i class="x"></i>
+        </button>
+      </div>
+      <button type="submit" data-variant="primary" id="submitForm">Adicionar item</button>
+    </form>
+  </header>
+
+  <main id="itemContainer">
+    <!-- APENAS UMA DEMONSTRAÇÃO DO QUE O JS CRIA 
+      <label class="item">
+        <input type="checkbox" />
+        <span>Pão de forma</span>
+        <button type="button" data-variant="trash"><i class="trash"></i></button>
+      </label>
+    -->
+  </main>
+
+  <script src="./js/validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+button {
+  all:unset;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  
+  font:var(--label);
+  
+  transition:background-color .45s ease;
+  cursor:pointer;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+button[data-variant="primary"] {
+  padding:.75rem 1.5rem;
+
+  background-color:var(--brand);
+  color:var(--always-white);
+  border-radius:12px;
+
+  &:hover {
+    background-color:var(--brand-hover);
+  }
+}
+
+button[data-variant="trash"] {
+  padding:.5rem;
+
+  background-color:transparent;
+
+  transition:filter .35s ease;
+  
+  &:hover {
+    filter: brightness(0) saturate(100%) invert(23%) sepia(77%) saturate(1696%) hue-rotate(300deg) brightness(87%) contrast(90%);
+  }
+}

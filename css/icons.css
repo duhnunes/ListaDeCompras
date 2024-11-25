@@ -1,0 +1,32 @@
+.logo {
+  display:inline-block;
+  background:url(../assets/icons/logo.svg) no-repeat center/cover;
+
+  width:9.6875rem;
+  height:2.5rem;
+}
+
+.trash {
+  display:inline-block;
+  background:url(../assets/icons/trash.svg) no-repeat center/cover;
+
+  width:1rem;
+  height:1rem;
+  filter: brightness(0) saturate(100%) invert(71%) sepia(12%) saturate(265%) hue-rotate(179deg) brightness(90%) contrast(86%);
+}
+
+.alert-icon {
+  display:inline-block;
+  background:url(../assets/icons/alert-icon.svg) no-repeat center/cover;
+
+  width:1.25rem;
+  height:1.25rem;
+}
+
+.x {
+  display:inline-block;
+  background:url(../assets/icons/x.svg) no-repeat center/cover;
+
+  width:1.25rem;
+  height:1.25rem;
+}

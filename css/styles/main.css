@@ -1,0 +1,43 @@
+main {
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  
+  max-width: 39.1875rem;
+  margin: 0 auto;
+  padding-inline:.5rem;
+  padding-bottom:13.5625rem;
+
+
+  & .item {
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+
+    padding:.5rem .75rem;
+
+
+    background-color:rgba(255 255 255 /.6);
+    border-radius:12px;
+
+    transition:background-color .35s ease;
+    
+    &:hover {
+      background-color:var(--bg-secondary);
+    }
+
+    &:has(input[type="checkbox"]:checked) {
+      background-color:var(--disabled);
+      text-decoration:line-through;
+
+      & span {
+        opacity:.4;
+      }
+    }
+
+    & span {
+      flex:1 1 auto;
+      color:var(--content-secondary);
+    }
+  }
+}

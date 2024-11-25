@@ -1,0 +1,56 @@
+form {
+  display:flex;
+  align-items:center;
+  gap:1rem;
+
+  width:100%;
+}
+
+@media (max-width: 600px) {
+  form {
+    flex-direction:column;
+    align-items:stretch;
+  }
+}
+
+.input {
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+  position:relative;
+
+  flex:1 1 auto;
+
+  & small {
+    position:absolute;
+    bottom:-50%;
+    left:0;
+
+    visibility:hidden;
+    color:var(--danger);
+    margin-left:.5rem;
+  }
+
+  & #clearInput {
+    display:none;
+    position:absolute;
+    top:50%;
+    right:10px;
+    translate:0 -50%;
+    line-height:0;
+
+    filter: brightness(0) saturate(100%) invert(3%) sepia(5%) saturate(6322%) hue-rotate(184deg) brightness(98%) contrast(98%);
+
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(25%) sepia(93%) saturate(1421%) hue-rotate(327deg) brightness(95%) contrast(93%);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .input {
+    & small {
+      top:-50%;
+    }
+  }
+}
