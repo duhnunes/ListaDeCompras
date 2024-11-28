@@ -1,7 +1,7 @@
-const btnSubmit = document.getElementById('submitForm');
 const newItemInput = document.getElementById('newItem');
 const clearInputBtn = document.getElementById('clearInput');
 const itemContainer = document.getElementById('itemContainer');
+const form = document.querySelector('form');
 
 let items = JSON.parse(localStorage.getItem('items')) || [];
 
@@ -14,29 +14,33 @@ function checkInput() {
     }
   })
 }
-function checkSubmitInput() {
+
+function handleInvalidInput() {
   const small = document.querySelector('.input small');
-
-  if(newItemInput.value.trim() === "") {
-    newItemInput.setAttribute('class', 'error');
-    small.style.visibility = 'visible';
-    newItemInput.focus();
-  } else {
-    const value = newItemInput.value;
-    items.push(value);
-    newItemInput.value = "";
-    newItemInput.focus();
-    addItemToDOM(value);
-    clearInputBtn.style.display = 'none';
-
-    localStorage.setItem('items', JSON.stringify(items));
-  }
+  newItemInput.setAttribute('class', 'error');
+  small.style.visibility = 'visible';
+  newItemInput.focus();
 
   newItemInput.addEventListener('input', () => {
     newItemInput.removeAttribute('class');
     small.style.visibility = 'hidden';
   })
+}
 
+function handleSubmitInput() {
+  const value = newItemInput.value;
+
+  if(value === "") {
+    handleInvalidInput();
+  } else {
+    items.push(value);
+    newItemInput.value = "";
+    newItemInput.focus();
+    addItemToDOM(value);
+    clearInputBtn.style.display = 'none';
+  
+    localStorage.setItem('items', JSON.stringify(items));
+  }
 }
 function clearInput() {
   newItemInput.value = "";
@@ -94,9 +98,10 @@ function addItemToDOM(value) {
 checkInput();
 items.forEach(item => addItemToDOM(item));
 
-btnSubmit.addEventListener('click', (e) => {
+
+form.onsubmit = (e) => {
   e.preventDefault();
-  checkSubmitInput();
-})
+  handleSubmitInput();
+}
 
 clearInputBtn.addEventListener('click', clearInput);
