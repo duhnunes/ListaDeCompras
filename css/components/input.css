@@ -29,11 +29,6 @@ input[type="text"] {
     color:var(--content-tertiary);
   }
 }
-@keyframes rolling {
-  to {
-    rotate:360deg;
-  }
-}
 
 input[type="checkbox"] {
   all:unset;
