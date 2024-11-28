@@ -76,11 +76,12 @@ function addItemToDOM(value) {
     input.style.display = 'none';
     icon.style.display = 'block';
     button.style.visibility = 'hidden';
+    items = items.filter(item => item !== value);
+    localStorage.setItem('items', JSON.stringify(items));
 
     setTimeout(() => {
       itemContainer.removeChild(label);
-      items = items.filter(item => item !== value);
-      localStorage.setItem('items', JSON.stringify(items));
+      
     }, 2500)
   });
 
